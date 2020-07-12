@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Comp-Art</title>
+    <style type="text/css">
+        body {
+            font-family: "Press Start 2P", cursive;
+            background-repeat: repeat;
+            background-attachment: scroll;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        button {
+            font-family: "Press Start 2P", cursive;
+            color: white;
+        }
+
+        a {
+            font-family: "Press Start 2P", cursive;
+            font-size: 11px;
+        }
+
+        .headmenu {
+            float: right;
+        }
+
+        .transparente {
+            background-color: transparent;
+            border-color: transparent;
+            color: white;
+        }
+
+        .transparente:hover {
+            color: #fff;
+            -moz-box-shadow: 0 3px 10px 0 #CCC;
+            text-shadow: 0px 0px 5px #fff;
+        }
+
+        .nav-link {
+            color: white;
+        }
+
+        .nav-link:hover {
+            color: black;
+        }
+
+        .fundosalmao {
+            background-color: #DC143C;
+        }
+
+        /*
+*
+* ===========================================================
+*     HERO SECTION
+* ===========================================================
+*
+*/
+        .hero {
+            padding: 1rem 0px !important;
+            margin: 0px !important;
+        }
+
+        .cardbox {
+            border-radius: 3px;
+            margin-bottom: 20px;
+            padding: 0px !important;
+        }
+
+        /* ------------------------------- */
+        /* Cardbox Heading
+---------------------------------- */
+        .cardbox .cardbox-heading {
+            padding: 16px;
+            margin: 0;
+        }
+
+        .cardbox .btn-flat.btn-flat-icon {
+            border-radius: 50%;
+            font-size: 24px;
+            height: 32px;
+            width: 32px;
+            padding: 0;
+            overflow: hidden;
+            color: #fff !important;
+            background: #b5b6b6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cardbox .float-right .dropdown-menu {
+            position: relative;
+            left: 13px !important;
+        }
+
+        .cardbox .float-right a:hover {
+            background: #f4f4f4 !important;
+        }
+
+        .cardbox .float-right a.dropdown-item {
+            display: block;
+            width: 100%;
+            padding: 4px 0px 4px 10px;
+            clear: both;
+            font-weight: 400;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 11px !important;
+            color: #848484;
+            text-align: inherit;
+            white-space: nowrap;
+            background: 0 0;
+            border: 0;
+        }
+
+        /* ------------------------------- */
+        /* Media Section
+---------------------------------- */
+        .media {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: start;
+            align-items: flex-start;
+        }
+
+        .d-flex {
+            display: -ms-flexbox !important;
+            display: flex !important;
+        }
+
+        .media .mr-3 {
+            margin-right: 1rem !important;
+        }
+
+        .media img {
+            width: 48px !important;
+            height: 48px !important;
+            padding: 2px;
+            border: 2px solid #f4f4f4;
+        }
+
+        .media-body {
+            -ms-flex: 1;
+            flex: 1;
+            padding: .4rem !important;
+        }
+
+        .media-body p {
+            font-family: 'Press Start 2P', cursive;
+            font-weight: 500 !important;
+            font-size: 14px;
+            color: #88898a;
+        }
+
+        .media-body small span {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 11px;
+            color: #aaa;
+            margin-right: 10px;
+        }
+
+        /* ------------------------------- */
+        /* Cardbox Item
+---------------------------------- */
+        .cardbox .cardbox-item {
+            position: relative;
+            display: block;
+        }
+
+        .img-responsive {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .fw {
+            width: 100% !important;
+            height: auto;
+        }
+
+        /* ------------------------------- */
+        /* Cardbox Base
+---------------------------------- */
+        .cardbox-base {
+            border-bottom: 2px solid #f4f4f4;
+        }
+
+        .cardbox-base ul {
+            margin: 10px 0px 10px 15px !important;
+            padding: 10px !important;
+            font-size: 0px;
+            display: inline-block;
+        }
+
+        .cardbox-base li {
+            list-style: none;
+            margin: 0px 0px 0px -8px !important;
+            padding: 0px 0px 0px 0px !important;
+            display: inline-block;
+        }
+
+        .cardbox-base li a {
+            margin: 0px !important;
+            padding: 0px !important;
+        }
+
+        .cardbox-base li a i {
+            position: relative;
+            top: 4px;
+            font-size: 2em;
+            color: #8d8d8d;
+            margin-right: 15px;
+        }
+
+        .cardbox-base li a span {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 14px;
+            color: #8d8d8d;
+            margin-left: 20px;
+            position: relative;
+            top: 5px;
+        }
+
+        .cardbox-base li a em {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 14px;
+            color: #8d8d8d;
+            position: relative;
+            top: 3px;
+        }
+
+        .cardbox-base li a img {
+            width: 25px;
+            height: 25px;
+            margin: 0px !important;
+            border: 2px solid #fff;
+        }
+
+        /* ------------------------------- */
+        /* Cardbox Comments
+---------------------------------- */
+        .cardbox-comments {
+            padding: 10px 40px 20px 40px !important;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .cardbox-comments .comment-avatar img {
+            margin-top: 1px;
+            margin-right: 10px;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+        }
+
+        .cardbox-comments .comment-body {
+            overflow: auto;
+        }
+
+        .search {
+            position: relative;
+            right: -60px;
+            top: -40px;
+            margin-bottom: -40px;
+            border: 2px solid #f4f4f4;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .search input[type="text"] {
+            background-color: #fff;
+            line-height: 10px;
+            padding: 15px 60px 20px 10px;
+            border: none;
+            border-radius: 4px;
+            width: 350px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 14px;
+            color: #8d8d8d;
+            height: inherit;
+            font-weight: 700;
+        }
+
+        .search button {
+            position: absolute;
+            right: 0;
+            top: 0px;
+            border: none;
+            background-color: transparent;
+            color: #bbbbbb;
+            padding: 15px 25px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .search button i {
+            font-size: 20px;
+            line-height: 30px;
+            display: block;
+        }
+
+        .imgcoment {
+            left: 20px;
+        }
+
+        .fa-thumbs-up:hover {
+            text-shadow: 3px 3px 5px #5CB85C;
+        }
+
+        .fa.likeazul {
+            color: #5CB85C;
+        }
+    </style>
+</head>
+
+<body>
+<!--#5CB85C-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 fundosalmao">
+            <nav class="navbar navbar-light" style="background-color: transparent;">
+                <!-- Header logo -->
+                <div class="btn-group dropright transparente">
+                    <a href="/posts"><button type="button" class="btn btn-outline-danger transparente">Comp-Art</button></a>
+                    <button type="button"
+                            class="btn btn-outline-light dropdown-toggle dropdown-toggle-split transparente"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropright</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Sobre</a> <a class="dropdown-item" href="#">Regras</a> <a
+                            class="dropdown-item" href="#">Contribuir</a>
+                    </div>
+                </div>
+                <!-- Pesquisar -->
+                <form class="form-inline">
+                    <input class="form-control pixelfont mr-sm-2" type="search" placeholder="Digite algo..."
+                           aria-label="Search">
+                    <a href="/busca"><button class="btn btn-success my-2 my-sm-0" type="submit">Pesquisar</button></a>
+                </form>
+                <!-- Header bot?es -->
+                <div class="btn-group headmenu icones">
+                    <a href="/novopost"><button type="button" class="btn btn-outline-danger transparente">
+                        <svg width="25" height="25" viewBox="0 0 16 16" class="bi bi-brush" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.213 1.018a.572.572 0 0 1 .756.05.57.57 0 0 1 .057.746C15.085 3.082 12.044 7.107 9.6 9.55c-.71.71-1.42 1.243-1.952 1.596-.508.339-1.167.234-1.599-.197-.416-.416-.53-1.047-.212-1.543.346-.542.887-1.273 1.642-1.977 2.521-2.35 6.476-5.44 7.734-6.411z"/>
+                            <path d="M7 12a2 2 0 0 1-2 2c-1 0-2 0-3.5-.5s.5-1 1-1.5 1.395-2 2.5-2a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </button></a>
+                </div>
+                <div class="btn-group headmenu">
+                   <div sec:authorize="hasRole('ARTIST')"><a th:href="@{/perfil/artista/}"><button type="button" class="btn btn-danger transparente">
+                        <svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-person-circle"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                    d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+                            <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            <path fill-rule="evenodd"
+                                  d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+                        </svg>
+                    </button></a></div>
+                    <div sec:authorize="hasRole('USER')"><a th:href="@{/perfil/usuario/}"><button type="button" class="btn btn-danger transparente">
+                        <svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-person-circle"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                    d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+                            <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            <path fill-rule="evenodd"
+                                  d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+                        </svg>
+                    </button></a></div>
+                </div>
+                <div class="btn-group headmenu">
+                    <button type="button" class="btn btn-outline-danger dropdown-toggle transparente"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-tools" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M0 1l1-1 3.081 2.2a1 1 0 0 1 .419.815v.07a1 1 0 0 0 .293.708L10.5 9.5l.914-.305a1 1 0 0 1 1.023.242l3.356 3.356a1 1 0 0 1 0 1.414l-1.586 1.586a1 1 0 0 1-1.414 0l-3.356-3.356a1 1 0 0 1-.242-1.023L9.5 10.5 3.793 4.793a1 1 0 0 0-.707-.293h-.071a1 1 0 0 1-.814-.419L0 1zm11.354 9.646a.5.5 0 0 0-.708.708l3 3a.5.5 0 0 0 .708-.708l-3-3z" />
+                            <path fill-rule="evenodd"
+                                  d="M15.898 2.223a3.003 3.003 0 0 1-3.679 3.674L5.878 12.15a3 3 0 1 1-2.027-2.027l6.252-6.341A3 3 0 0 1 13.778.1l-2.142 2.142L12 4l1.757.364 2.141-2.141zm-13.37 9.019L3.001 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z" />
+                        </svg>
+                    </button>
+                    <div class="bnt dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Privacidade</a> <a class="dropdown-item"
+                                                                             href="#">Personalização</a> <a class="dropdown-item" href="#">Login e Senha</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/logout">Sair</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- POST -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+
+                <section  class="hero">
+                    <div class="row">
+
+                        <div class="col-lg-12 offset-lg-2" style="right: 108px;" th:each="post : ${posts}">
+
+                            <div class="cardbox shadow-lg bg-white">
+
+                                <div class="cardbox-heading">
+                                    <!-- START dropdown-->
+                                    <div class="dropdown float-right">
+                                        <button class="btn btn-flat btn-flat-icon" type="button"
+                                                data-toggle="dropdown" aria-expanded="false">
+                                            <em class="fa fa-ellipsis-h"></em>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"
+                                             style="position: absolute; transform: translate3d(-136px, 28px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                            <a class="dropdown-item" href="#">Esconder</a> <a class="dropdown-item"
+                                                                                              href="#">Editar descrição</a> <a class="dropdown-item"
+                                                                                                                               href="#">Excluir</a>
+                                        </div>
+                                    </div>
+                                    <!--/ dropdown -->
+                                    <div class="media m-0">
+                                        <div class="d-flex mr-3">
+                                            <a href=""><img class="img-fluid rounded-circle"
+                                                            src="https://image.freepik.com/vetores-gratis/animal-bonito-fazendo-movimento-dabbing_23-2147857344.jpg" alt="User"></a>
+                                        </div>
+                                        <div class="media-body"></span>
+                                            <a>
+                                                <span class="m-0" th:text="${post.autor}"></span></a>
+                                            <small><span><i class="icon ion-md-pin"></i>Em casa (eu espero!)
+                                                    </span></small> <small><span th:text="${post.data}"><i  class="icon ion-md-time"></i></span></small>
+                                        </div>
+                                    </div>
+                                    <!--/ media -->
+                                </div>
+                                <!--/ cardbox-heading -->
+
+                                <div class="cardbox-item">
+                                    <div class="card-body">
+                                        <a>
+                                            <h4 class="card-title"
+                                                style="font-style: italic; color: rgba(42, 41, 41, 0.692); padding-top: 5px;"><span
+                                                    th:text="${post.descricao}"></span></h4>
+                                        </a>
+                                        <p class="card-text"><span th:utext="${#strings.abbreviate(post.conteudo,800)} "></span></p>
+                                    </div>
+                                </div>
+                                <!--/ cardbox-item -->
+                                <div class="cardbox-base">
+                                    <ul class="float-right">
+                                        <li><a><i class="fa fa-comments"></i></a></li>
+                                        <li><a><em class="mr-5">12</em></a></li>
+                                        <li><a><i class="fa fa-share-alt"></i></a></li>
+                                        <li><a><em class="mr-3">03</em></a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a><i onclick="curtir(this)" class="fa fa-thumbs-up"
+                                                  style="margin-right: 25px;"></i></a></li>
+                                        <li><a href="#"><img
+                                                src="https://image.freepik.com/vetores-gratis/animal-bonito-fazendo-movimento-dabbing_23-2147857344.jpg"
+                                                class="img-fluid rounded-circle"
+                                                style="width: 30px; height: 30px;" alt="User"></a></li>
+                                        <li><a href="#"><img
+                                                src="https://image.freepik.com/vetores-gratis/animal-bonito-fazendo-movimento-dabbing_23-2147857344.jpg"
+                                                class="img-fluid rounded-circle"
+                                                style="width: 30px; height: 30px;" alt="User"></a></li>
+                                        <li><a href="#"><img
+                                                src="https://image.freepik.com/vetores-gratis/animal-bonito-fazendo-movimento-dabbing_23-2147857344.jpg"
+                                                class="img-fluid rounded-circle"
+                                                style="width: 30px; height: 30px;" alt="User"></a></li>
+                                        <li><a href="#"><img
+                                                src="https://image.freepik.com/vetores-gratis/animal-bonito-fazendo-movimento-dabbing_23-2147857344.jpg"
+                                                class="img-fluid rounded-circle"
+                                                style="width: 30px; height: 30px;" alt="User"></a></li>
+                                        <li><a><span>242 Likes</span></a></li>
+                                    </ul>
+                                </div>
+                                <!--/ cardbox-base -->
+                                <div class="cardbox-comments col-10">
+                                        <span class="comment-avatar float-left"> <a href=""><img style="top: 12px"
+                                                                                                 class="rounded-circle"
+                                                                                                 src="https://image.freepik.com/vetores-gratis/animal-bonito-fazendo-movimento-dabbing_23-2147857344.jpg"
+                                                                                                 alt="..."></a>
+                                        </span>
+                                    <div class="search">
+                                        <input placeholder="Faça um comentário" type="text">
+                                        <button>
+                                            <i class="fa fa-camera"></i>
+                                        </button>
+                                    </div>
+                                    <!--/. Search -->
+                                </div>
+                                <!--/ cardbox-like -->
+
+                            </div>
+                            <!--/ cardbox -->
+
+                        </div>
+
+
+                    </div>
+                    <!--/ row -->
+                    <!--/ container -->
+                </section>
+            </div>
+            <!-- LISTA DE AMIGOS -->
+            <div align="right" class="col-2">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+        var contador = 0;
+        async function curtir(corCurtir) {
+            contador++;
+            if ((contador % 2) == 1) {
+                corCurtir.classList.add("likeazul");
+            } else {
+                corCurtir.classList.remove("likeazul");
+            }
+        }
+    </script>
+</body>
+
+</html>

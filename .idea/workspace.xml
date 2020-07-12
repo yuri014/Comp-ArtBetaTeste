@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1e33f9cf-d638-4126-8f58-93182ee0f7fe" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1eHSbXbRfn8eLtwNWfOYmYqtQo9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.compart.beta.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yurif\OneDrive\Área de Trabalho\Caderno\Web III\CA Workspace\beta\src\main\resources\templates" />
+      <recent name="C:\Users\yurif\OneDrive\Área de Trabalho\Caderno\Web III\CA Workspace\beta\src\main\java\com\compart\beta\repository" />
+      <recent name="C:\Users\yurif\OneDrive\Área de Trabalho\Caderno\Web III\CA Workspace\beta\src\main\java\com\compart\beta\model" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BetaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.compart.beta.BetaApplication" />
+      <module name="beta" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.compart.beta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BetaApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1e33f9cf-d638-4126-8f58-93182ee0f7fe" name="Default Changelist" comment="" />
+      <created>1593977099602</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593977099602</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593985269857">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1593985269857" />
+    <state x="462" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594426325285">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1594426325285" />
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1594330671488">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1594330671488" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1594274858012">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1594274858012" />
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1594518896150">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594518896150" />
+    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1594518896149">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1594518896149" />
+    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1594518896148">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1594518896148" />
+    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1594518896149">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1594518896149" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1594518894334">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1594518894334" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1594518894333">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1594518894333" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1594518894333">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1594518894333" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1594518894334">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1594518894334" />
+    <state x="184" y="0" key="SettingsEditor" timestamp="1593985255222">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1593985255222" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1594447054866">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1594447054866" />
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1594272488636">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1594272488636" />
+    <state x="390" y="0" width="585" height="728" key="find.popup" timestamp="1594018179396">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1594018179396" />
+    <state x="459" y="122" key="refactoring.ChangeSignatureDialog" timestamp="1594501216786">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="459" y="122" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1594501216786" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1594231368038">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1594231368038" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1594331220597">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594331220597" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/beta$BetaApplication.ic" NAME="BetaApplication Coverage Results" MODIFIED="1594501458440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.compart.beta.*</FILTER>
+    </SUITE>
+  </component>
+</project>
