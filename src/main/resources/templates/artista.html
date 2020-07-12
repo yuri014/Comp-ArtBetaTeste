@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+		/*-----Background-----*/
+		body {
+			background-image:
+				url("https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100%;
+			height: 100vh;
+			overflow: auto;
+		}
+
+		/*----for character selection----*/
+		.sel {
+			font-family: 'Press Start 2P', cursive;
+			border-style: 1px solid grey;
+			border-radius: 5px;
+			margin: 0 auto;
+			text-align: center;
+			opacity: 0.8;
+			padding-top: 10px;
+			padding-bottom: 25px;
+		}
+
+		/*-----for border----*/
+		.borda {
+			font-family: 'Press Start 2P', cursive;
+			background-color: rgba(0, 0, 0, 0.5) !important;
+			border-style: 1px solid grey;
+			border-radius: 5px;
+			margin: 0 auto;
+			bottom: 1000px;
+			text-align: center;
+			opacity: 0.8;
+			max-width: 500px;
+			height: 363px;
+
+		}
+
+		/*--- for label of first and last name---*/
+		.lastname {
+			margin-left: 1px;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 11px;
+			color: white;
+			margin-top: 10px;
+		}
+
+		.firstname {
+			margin-left: 1px;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 11px;
+			color: white;
+			margin-top: 5px;
+		}
+
+		.arttype {
+			margin-left: 1px;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 11px;
+			color: white;
+			margin-top: 5px;
+		}
+
+		#sobrenomeUsuario {
+			margin-top: 5px;
+		}
+
+		/*---for heading-----*/
+		.heading {
+			font-family: 'Press Start 2P', cursive;
+			font-size: 24px;
+			text-decoration: bold;
+			text-align: center;
+			color: white;
+			padding-top: 10px;
+		}
+
+		/*-------for email----------*/
+		/*------label----*/
+		#emailArtista {
+			margin-top: 5px;
+		}
+
+		#emailUsuario {
+			margin-top: 5px;
+		}
+
+		/*-----------for Password--------*/
+		/*-------label-----*/
+		.mail {
+			margin-left: 44px;
+			font-family: 'Press Start 2P', cursive;
+			color: white;
+			font-size: 11px;
+			margin-top: 13px;
+		}
+
+		.pass {
+			color: white;
+			margin-top: 9px;
+			font-size: 11px;
+			font-family: 'Press Start 2P', cursive;
+			margin-left: 6px;
+			margin-top: 9px;
+		}
+
+		#senhaArtista {
+			margin-top: 6px;
+		}
+
+		#senhaUsuario {
+			margin-top: 6px;
+		}
+
+		/*------------for phone Number--------*/
+		/*----------label--------*/
+		.pno {
+			font-size: 18px;
+			margin-left: -13px;
+			margin-top: 10px;
+			color: #ff9;
+		}
+
+		/*--------------for Gender---------------*/
+		/*--------------label---------*/
+		.gender {
+			color: white;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 11px;
+			margin-left: 28px;
+			margin-top: 8px;
+		}
+
+		/*---------- for Input type--------*/
+		.col-2.male {
+			font-family: 'Press Start 2P', cursive;
+			color: white;
+			font-size: 10px;
+			margin-top: 9px;
+			padding-bottom: 16px;
+			padding-left: 1px;
+			left: 20px;
+		}
+
+		.col-2.female {
+			font-family: 'Press Start 2P', cursive;
+			color: white;
+			font-size: 10px;
+			margin-top: 9px;
+			padding-bottom: 16px;
+			padding-right: 1px;
+			left: 30px;
+		}
+
+		.col-2.another {
+			font-family: 'Press Start 2P', cursive;
+			color: white;
+			font-size: 10px;
+			margin-top: 9px;
+			padding-bottom: 16px;
+			padding-left: 1px;
+			right: 1px;
+			left: 60px;
+		}
+
+		/*------------For submit button---------*/
+		.btn {
+			color: white;
+			font-size: 20px;
+			border: 1px solid white;
+			background-color: #DC143C;
+			box-shadow: 0px 2px 2px 0px white;
+		}
+
+		.btn.btn-warning:hover {
+			box-shadow: 2px 1px 2px 3px #99ccff;
+			background: #5CB85C;
+			color: #fff;
+			transition: background-color 1.15s ease-in-out, border-color 1.15s ease-in-out, box-shadow 1.15s ease-in-out;
+		}
+
+		.fonte {
+			font-family: 'Press Start 2P', cursive;
+
+		}
+
+		.artype {
+			margin-top: 5px;
+			margin-bottom: 1px;
+		}
+
+		.silhueta {
+			filter: grayscale(1);
+		}
+	</style>
+</head>
+
+<body>
+<div class="container d-flex justify-content-center">
+    <div class="row">
+        <div class="col-12">
+            <img id="imgArtista"
+                 src="https://cdn.pixabay.com/photo/2018/05/16/18/22/standing-3406665_960_720.png"
+                 style="width: 150px; height: 150px;">
+            <img class="silhueta" id="imgUsuario"
+                 src="https://cdn.pixabay.com/photo/2013/07/12/14/07/student-147783_960_720.png"
+                 style="width: 150px; height: 150px;margin-top: 20px;">
+        </div>
+    </div>
+</div>
+<div class="container sel">
+    <div class="row">
+        <div class="col-12">
+            <a href="/artista"><button class="btn">Artista</button></a>
+            <a href="/usuario"><button class="btn">Usuário</button></a>
+        </div>
+    </div>
+</div>
+<div id="criadores" style="display: block;">
+
+    <!--PARA CRIADORES-->
+<form th:action="@{/artista}" method="post" th:object="${artist}">
+    <div class="container borda">
+        <!---heading---->
+        <header class="heading">Cadastro Do Artista</header>
+        <hr>
+        <!---Form starting---->
+        <div class="row ">
+            <!--- For Name---->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div align="right" class="col-4">
+                        <label class="firstname">Nome/Grupo:</label>
+                    </div>
+                    <div class="col-8">
+                        <input th:field="*{nomeArtista}" type="text" value="" name="nomeArtista" id="nomeArtista"
+                               placeholder="Solo ou do grupo" class="form-control fonte">
+                    </div>
+                </div>
+            </div>
+            <!-----For email---->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div align="right" class="col-4">
+                        <label class="mail">Nick:</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" th:field="*{username}" name="username" id="emailArtista" placeholder="Seu nick" value=""
+                               class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!-----For Password and confirm password---->
+            <div class="col-sm-12">
+                <div class="row">
+                    <div align="right" class="col-4">
+                        <label class="pass">Senha:</label>
+                    </div>
+                    <div class="col-8">
+                        <input th:field="*{senhaArtista}" type="password" name="senhaArtista" id="senhaArtista" placeholder="Senha" value=""
+                               class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- For Art -->
+
+            <div class="col-sm-12">
+                <div class="row">
+                    <div align="right" class="col-4">
+                        <label class="arttype">Tipos de Arte:</label>
+                    </div>
+                    <div class="col-8">
+                        <div class="form-group artype">
+                            <select class="form-control" name="tipoArte" th:field="*{tipoArte}" id="exampleFormControlSelect1">
+                                <option value="Musica">Música</option>
+                                <option value="Literatura">Literatura</option>
+                                <option value="Danca">Dança</option>
+                                <option value="Pintura">Pintura</option>
+                                <option value="Arte Digital">Arte Digital</option>
+                                <option value="Audiovisual">Audiovisual</option>
+                                <option value="Fotografia">Fotografia</option>
+                                <option value="Teatro">Teatro</option>
+                                <option value="HQsManga">HQs/Mangá</option>
+                                <option value="Jogos Eletronicos">Jogos eletrônicos</option>
+                                <option value="Escultura">Escultura</option>
+                                <option value="Moda">Moda</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <button class="btn btn-warning" id="artistaSubmit" onclick="verificarArtista()">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+
+<script type="text/javascript">
+
+		function verificarArtista() { // Análise de dados de artistas
+			const artista = {
+				nome: document.getElementById('nomeArtista').value,
+				email: document.getElementById('emailArtista').value,
+				senha: document.getElementById('senhaArtista').value
+			}
+
+			if (!artista.nome) {
+				alert('Nome não pode ser vazio!')
+			} else if (!artista.email) {
+				alert('Email não pode ser vazio!')
+			} else if (!artista.senha) {
+				alert('Senha não pode ser vazia!')
+			} else {
+				document.getElementById('artistaSubmit').type = 'submit'
+			}
+		}
+
+	</script>
+
+</body>
+
+</html>

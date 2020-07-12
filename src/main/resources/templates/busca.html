@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" >
+
+<head xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>Busca</title>
+	<style type="text/css">
+		body {
+			font-family: "Press Start 2P", cursive;
+			background-repeat: repeat;
+			background-attachment: scroll;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		* {
+			padding: 0px;
+			margin: 0px;
+			box-sizing: border-box;
+		}
+
+		button {
+			font-family: "Press Start 2P", cursive;
+			color: white;
+		}
+
+		a {
+			font-family: "Press Start 2P", cursive;
+			font-size: 11px;
+		}
+
+		.headmenu {
+			float: right;
+		}
+
+		.transparente {
+			background-color: transparent;
+			border-color: transparent;
+			color: white;
+		}
+
+		.transparente:hover {
+			color: #fff;
+			-moz-box-shadow: 0 3px 10px 0 #CCC;
+			text-shadow: 0px 0px 5px #fff;
+		}
+
+		.nav-link {
+			color: white;
+		}
+
+		.nav-link:hover {
+			color: black;
+		}
+
+		.fundosalmao {
+			background-color: #DC143C;
+		}
+
+		/*==========Resultados=============*/
+
+		th {
+			font-weight: normal;
+			font-style: oblique;
+		}
+
+		.content_box {
+			float: left;
+			width: 100%;
+		}
+
+		.left_bar {
+			float: left;
+			width: 20%;
+			background: #eaf4ff;
+			height: 100vh;
+		}
+
+		.right_bar {
+			float: left;
+			width: 80%;
+			padding: 15px;
+			height: 100%;
+		}
+
+		.nav-tabs--vertical li {
+			float: left;
+			width: 100%;
+			padding: 0;
+			position: relative;
+		}
+
+
+		.nav-tabs--vertical li a {
+			float: left;
+			width: 100%;
+			padding: 15px;
+			border-bottom: 1px solid #adcff7;
+			color: #1276F0;
+		}
+
+		.nav-tabs--vertical li a.active::after {
+			content: "";
+			border-color: #1276F0;
+			border-style: solid;
+			position: absolute;
+			right: -8px;
+			border-top: transparent;
+			border-right: transparent;
+			border-left: 15px solid transparent;
+			border-right: 15px solid transparent;
+			border-bottom: 16px solid #fff;
+			border-top: 0;
+			transform: rotate(270deg);
+			z-index: 999;
+		}
+	</style>
+</head>
+
+<body>
+	<!--Header-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 fundosalmao">
+				<nav class="navbar navbar-light" style="background-color: transparent;">
+					<!-- Header logo -->
+					<div class="btn-group dropright transparente">
+						<a href="/posts"><button type="button" class="btn btn-outline-danger transparente">Comp-Art</button></a>
+						<button type="button"
+							class="btn btn-outline-light dropdown-toggle dropdown-toggle-split transparente"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="sr-only">Toggle Dropright</span>
+						</button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">Sobre</a> <a class="dropdown-item" href="#">Regras</a> <a
+								class="dropdown-item" href="#">Contato</a>
+						</div>
+					</div>
+					<!-- Pesquisar -->
+					<form class="form-inline">
+						<input class="form-control pixelfont mr-sm-2" type="search" placeholder="Digite algo..."
+							aria-label="Search">
+						<a href="/busca"><button class="btn btn-success my-2 my-sm-0" type="submit">Pesquisar</button></a>
+					</form>
+					<!-- Header botões -->
+					<div class="btn-group headmenu icones">
+						<a href="/novopost"><button type="button" class="btn btn-outline-danger transparente">
+							<svg width="25" height="25" viewBox="0 0 16 16" class="bi bi-brush" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.213 1.018a.572.572 0 0 1 .756.05.57.57 0 0 1 .057.746C15.085 3.082 12.044 7.107 9.6 9.55c-.71.71-1.42 1.243-1.952 1.596-.508.339-1.167.234-1.599-.197-.416-.416-.53-1.047-.212-1.543.346-.542.887-1.273 1.642-1.977 2.521-2.35 6.476-5.44 7.734-6.411z"/>
+								<path d="M7 12a2 2 0 0 1-2 2c-1 0-2 0-3.5-.5s.5-1 1-1.5 1.395-2 2.5-2a2 2 0 0 1 2 2z"/>
+							</svg>
+						</button></a>
+					</div>
+					<div class="btn-group headmenu">
+						<div sec:authorize="hasRole('ARTIST')"><a th:href="@{/perfil/artista/}"><button type="button" class="btn btn-danger transparente">
+							<svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-person-circle"
+								 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path
+										d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+								<path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+								<path fill-rule="evenodd"
+									  d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+							</svg>
+						</button></a></div>
+						<div sec:authorize="hasRole('USER')"><a th:href="@{/perfil/usuario/}"><button type="button" class="btn btn-danger transparente">
+							<svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-person-circle"
+								 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path
+										d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+								<path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+								<path fill-rule="evenodd"
+									  d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+							</svg>
+						</button></a></div>
+					</div>
+					<div class="btn-group headmenu">
+						<button type="button" class="btn btn-outline-danger dropdown-toggle transparente"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<svg width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-tools" fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd"
+									d="M0 1l1-1 3.081 2.2a1 1 0 0 1 .419.815v.07a1 1 0 0 0 .293.708L10.5 9.5l.914-.305a1 1 0 0 1 1.023.242l3.356 3.356a1 1 0 0 1 0 1.414l-1.586 1.586a1 1 0 0 1-1.414 0l-3.356-3.356a1 1 0 0 1-.242-1.023L9.5 10.5 3.793 4.793a1 1 0 0 0-.707-.293h-.071a1 1 0 0 1-.814-.419L0 1zm11.354 9.646a.5.5 0 0 0-.708.708l3 3a.5.5 0 0 0 .708-.708l-3-3z" />
+								<path fill-rule="evenodd"
+									d="M15.898 2.223a3.003 3.003 0 0 1-3.679 3.674L5.878 12.15a3 3 0 1 1-2.027-2.027l6.252-6.341A3 3 0 0 1 13.778.1l-2.142 2.142L12 4l1.757.364 2.141-2.141zm-13.37 9.019L3.001 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z" />
+							</svg>
+						</button>
+						<div class="bnt dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="#">Privacidade</a> <a class="dropdown-item"
+								href="#">Personalização</a> <a class="dropdown-item" href="#">Login e Senha</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="/logout">Sair</a>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<!--=============Resultados======================-->
+
+	<div class="content_box">
+
+		<!--Botões-->
+
+		<div class="left_bar">
+			<ul class=" nav-tabs--vertical nav" role="navigation">
+				<li class="nav-item">
+					<a style="font-size: 16px;" href="#artista" class="nav-link active" data-toggle="tab" role="tab"
+						aria-controls="lorem">Artistas</a>
+				</li>
+				<li class="nav-item">
+					<a style="font-size: 16px;" href="#usuario" class="nav-link" data-toggle="tab" role="tab"
+						aria-controls="ipsum">Usuários</a>
+				</li>
+			</ul>
+		</div>
+
+		<!--Artistas-->
+
+		<div class="right_bar ">
+			<div class="tab-content ">
+				<div class="tab-pane fade show active" id="artista" role="tabpanel">
+
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Nome</th>
+								<th>Tipo de Arte</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="artista : ${artistas}">
+								<td th:text=${artista.nomeArtista}></td>
+								<td th:text=${artista.tipoArte}></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!--Usuários-->
+
+				<div class="tab-pane fade" id="usuario" role="tabpanel">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Nome</th>
+								<th>Sobrenome</th>
+								<th>Preferência</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="usuario : ${usuarios}">
+								<td th:text="${usuario.nomeUsuario}"></td>
+								<td th:text="${usuario.sobrenomeUsuario}"></td>
+								<td th:text="${usuario.preferencia}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+</html>
