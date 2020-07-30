@@ -20,9 +20,11 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
+    @Lazy
     private UsuarioService usuarioService;
 
     @Autowired
+    @Lazy
     private ArtistaService artistaService;
 
     @Override
@@ -46,13 +48,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();;
     }
     
-    @Lazy
     @Bean
+    @Lazy
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
+    @Lazy
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
         auth.setUserDetailsService(usuarioService);
